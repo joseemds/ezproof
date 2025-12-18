@@ -5,6 +5,6 @@ Here is a basic proof of some rules
 ```
 
 ```proof
-(a a)
+(#elimR (a $"a \to b") b)
 ```
 

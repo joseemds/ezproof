@@ -33,7 +33,7 @@ local grammar = {
   list = tk"(" * Ct(V"expr" * (ws^1 * V"expr")^0) * tk")",
   expr = inline_math + ID + V"rule",
   premises = V"list" + Ct(V"expr"),
-  rule = tk"(" * (Cg(V"rulename") * ws^1 + Cc(nil)) * V"premises" * ws^1 * Cg(V"expr") * tk")" / ast.rule,
+  rule = tk"(" * (Cg(V"rulename") * ws^1 + Cc(nil)) * V"premises" * ws^0 * Cg(V"expr") * tk")" / ast.rule,
   rulename = (inline_math + (P"#" * ID)),
 }
 
